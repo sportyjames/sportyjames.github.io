@@ -1,0 +1,604 @@
+@import "config";
+
+$primary-color: rgb(56, 82, 154);
+$secondary-color: rgb(73, 209, 214);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $primary-color;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+//Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  //sub heading defined inside heading
+  &.lg-heading {
+    font-size: 5rem;
+  }
+
+  //sub heading defined inside heading
+  &.sm-heading {
+    margin-bottom: 2rem;
+  }
+}
+
+//hyperlink
+a {
+  color: white;
+  text-decoration: none;
+}
+
+//secondary text
+.text-secondary {
+  color: $secondary-color;
+}
+
+//nav bar class
+.topnav {
+  background-color: $primary-color;
+  overflow: hidden;
+}
+
+/* The navigation menu links */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.topnav a:hover {
+  color: #33d7ff;
+}
+
+//sub class(style of all pages except home page)
+.sub {
+  padding-right: 3rem;
+  padding-left: 3rem;
+  height: 100%;
+}
+
+//--------Home Page start----------------
+//main class(main page)
+.main {
+  padding-right: 9rem;
+  padding-left: 9rem;
+  height: 100%;
+
+  .icons {
+    margin-top: 1rem;
+    a {
+      padding: 0.4rem;
+      @include easeOut;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+    //-------Icon hover effect start-------------
+    i:hover {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+    i:hover {
+      -webkit-transform: scale(1.5);
+      /* Browser Variations: */
+
+      -moz-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      -webkit-transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      -o-transition-duration: 0.5s;
+    }
+    //-------Icon Hover effect end-----------------
+  }
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 15vh;
+    }
+  }
+}
+
+// ---------slide show start-------------
+/* Slideshow container */
+.slideshow-container {
+  max-width: 550px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// ---------slide show end-------------
+
+//--------Home Page end----------------
+
+//--------About Page start----------------
+.about-info {
+  padding: 2rem;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "bioimage bio bio "
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 30%;
+    border: $secondary-color 3px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+
+  .job-2 {
+    grid-area: job2;
+  }
+
+  .job-3 {
+    grid-area: job3;
+  }
+
+  .job {
+    font-size: 1.2rem;
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+
+.title {
+  margin-top: 5rem;
+  margin-left: 10rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+//--------About Page end----------------
+
+//-------Skills Page start--------------
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: auto;
+  width: 92%;
+}
+
+.skill {
+  margin-bottom: 35px;
+  position: relative;
+  overflow-x: hidden;
+}
+.skill > p {
+  font-size: 18px;
+  font-weight: 700;
+  color: gold;
+  margin: 0;
+}
+.skill:before {
+  width: 100%;
+  height: 5px;
+  content: "";
+  display: block;
+  position: absolute;
+  background: #959595;
+  bottom: 0;
+}
+.skill-bar {
+  width: 100%;
+  height: 5px;
+  background: gold;
+  display: block;
+  position: relative;
+}
+
+/* SKILL 1 */
+.skill1 {
+  width: 95%;
+}
+.skill-bar span {
+  position: absolute;
+
+  top: -30px;
+  padding: 0;
+  font-size: 18px;
+  padding: 3px 0;
+  font-weight: 500;
+}
+.skill-bar {
+  position: relative;
+}
+
+.skill1 .skill-count1 {
+  right: 0;
+}
+/* SKILL 2 */
+.skill2 {
+  width: 85%;
+}
+
+.skill2 .skill-count2 {
+  right: 0;
+}
+/* SKILL 3 */
+.skill3 {
+  width: 75%;
+}
+.skill3 .skill-count3 {
+  right: 0;
+}
+
+/* SKILL 4 */
+.skill4 {
+  width: 65%;
+}
+
+.skill4 .skill-count4 {
+  right: 0;
+}
+
+/* SKILL 5 */
+.skill5 {
+  width: 80%;
+}
+
+.skill5 .skill-count5 {
+  right: 0;
+}
+
+/* SKILL 6 */
+.skill6 {
+  width: 90%;
+}
+
+.skill6 .skill-count6 {
+  right: 0;
+}
+
+//-------Skills Page end------------
+
+//--------Work Experience Page start----------------
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  color: black;
+  width: 50%;
+  .job-title {
+    font-size: 30px;
+  }
+  .time {
+    font-size: 18px;
+    color: rgb(56, 82, 154);
+  }
+  .location {
+    font-size: 18px;
+    color: grey;
+  }
+  li {
+    margin: 3px;
+  }
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #ff9f55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+//--------Work Experience Page end----------------
+
+//--------Project Page start----------------
+
+.project-info {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 10px;
+  padding: 3rem;
+
+  img {
+    width: 300px;
+    height: 300px;
+    border: 3px #33d7ff solid;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .btn-dark,
+  .btn-light {
+    display: block;
+    padding: 1.6rem 3rem;
+    border: 0;
+  }
+  .btn:hover,
+  .btn-dark:hover,
+  .btn-light:hover {
+    background: #eece1a;
+    color: #000;
+  }
+
+  .btn-dark {
+    background: black;
+    color: #fff;
+  }
+
+  .btn-light {
+    background: #c4c4c4;
+    color: #333;
+  }
+}
+
+//--------Project Page end----------------

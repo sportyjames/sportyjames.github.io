@@ -1,0 +1,33 @@
+1. SCSS folder
+- all the scss goes into css folder
+- here we have a config file where we can change 
+the colors, show images, opacity
+
+2. dist folder
+- basically what you deploy to your host 
+- we have the compiled css file, html, js, images
+
+3. installment
+- the compile tool we are using for sass is called node sass so we need npm to install it 
+
+4. scss workflow
+- main sass file any other files will be partials that import into this file 
+- we need a way for sass to get compiled down to regular css
+    - we use node-sass in this case 
+- npm init to initialize package.json 
+- set node sass up by npm scripts: npm run sass
+- goto main sass file write some sass
+- once save, it will update on css file
+- do not touch the main.css file. only work in scss 
+
+5. index.html
+- only include the main.css 
+
+6. scss
+- add box sizing property
+    - if padding on anything, it is not affect height and width
+     
+
+
+
+
